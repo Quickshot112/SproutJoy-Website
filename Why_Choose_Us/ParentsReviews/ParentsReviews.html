@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parents Reviews</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\..\Website_Design\Icon.jpg">
+  
+  <script src="../../Website_Design/WebsitesJava.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const starFilter = document.getElementById('starFilter');
+      const reviews = document.querySelectorAll('.Review-Card');
+      const loadBtn = document.getElementById('loadMoreBtn');
+
+      let showAll = false;
+      const initialVisible = 20;
+
+      function updateVisibility() {
+        reviews.forEach((review, index) => {
+          if (starFilter.value !== 'all') {
+            const stars = (review.textContent.match(/⭐/g) || []).length;
+            review.style.display = parseInt(starFilter.value) === stars ? '' : 'none';
+          } else {
+            if (!showAll && index >= initialVisible) {
+              review.style.display = 'none';
+            } else {
+              review.style.display = '';
+            }
+          }
+        });
+
+        if (starFilter.value === 'all') {
+          loadBtn.style.display = reviews.length > initialVisible ? 'inline-block' : 'none';
+        } else {
+          loadBtn.style.display = 'none';
+        }
+      }
+
+      starFilter.addEventListener('change', function () {
+        showAll = false;
+        loadBtn.innerText = 'Load More';
+        updateVisibility();
+      });
+
+      loadBtn.addEventListener('click', function () {
+        showAll = !showAll;
+        loadBtn.innerText = showAll ? 'Load Less' : 'Load More';
+        updateVisibility();
+      });
+
+      updateVisibility(); // Initial state
+    });
+  </script>
+  
+  <style>
+    .Review-Container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+	  padding-top: 5px;
+
+    .Review-Filter {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .Review-Filter select {
+      padding: 6px 12px;
+      border-radius: 10px;
+      border: 1px solid #000;
+      font-size: 14px;
+      cursor: pointer;
+	  color: white;
+	  background-color: #b8cca3;
+    }
+	
+	.Review-Filter select:hover {
+	  background-color: #f0f0f0; 
+	  border-color: #333;     
+      color: black;	  
+	  cursor: pointer;
+	}
+
+    .Review-Grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      margin-bottom: 30px;
+    }
+
+    .Review-Card {
+      width: 100%;
+      max-width: 180px;
+      min-height: 100px;
+      border: 2px solid #000;
+      padding: 15px;
+      background-color: #e6ffcc;
+    }
+
+    .Review-Button {
+      padding: 8px 16px;
+      border: 1px solid #000;
+      background-color: #FFDEAD;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+	
+	.Review-Button:hover {
+	  background-color: gray;
+	}
+
+    @media (max-width: 768px) {
+      .Review-Card {
+        padding: 10px;
+      }
+
+      .Review-Filter select {
+        font-size: 12px;
+      }
+    }
+  </style>
+  
+  <link rel="stylesheet" href="..\..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+  
+  <main class="Content-Space">
+  
+    <div class="Review-Container">
+	
+    <div class="Title">
+      <h1>PARENT REVIEWS</h1>
+    </div>
+
+      <div class="Review-Filter">
+        <label for="starFilter">Filter by: </label>
+        <select id="starFilter" name="starFilter">
+          <option value="all">All</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Star</option>
+        </select>
+      </div>
+
+      <div class="Review-Grid">
+        <!-- 24 example reviews (only first 20 shown by default) -->
+        <div class="Review-Card">Amazing service! ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Very professional ⭐⭐⭐⭐</div>
+        <div class="Review-Card">My child loved the nanny ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Reliable and caring staff ⭐⭐⭐⭐</div>
+        <div class="Review-Card">Highly recommend! ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Warm and attentive ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Good but pricey ⭐⭐⭐</div>
+        <div class="Review-Card">Super safe and friendly ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Will book again ⭐⭐⭐⭐</div>
+        <div class="Review-Card">Helpful in emergency ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Easy to arrange ⭐⭐⭐⭐</div>
+        <div class="Review-Card">Perfect for events ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Loving staff ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Safe and sound ⭐⭐⭐⭐</div>
+        <div class="Review-Card">Would recommend ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Organized and caring ⭐⭐⭐⭐</div>
+        <div class="Review-Card">Great experience ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Affordable ⭐⭐⭐</div>
+        <div class="Review-Card">Trustworthy team ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Kids loved it ⭐⭐⭐⭐⭐</div>
+        <!-- Hidden by default -->
+        <div class="Review-Card">Caring and polite ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Quick response ⭐⭐⭐⭐</div>
+        <div class="Review-Card">Safe for toddlers ⭐⭐⭐⭐⭐</div>
+        <div class="Review-Card">Nice environment ⭐⭐⭐⭐</div>
+      </div>
+
+      <button class="Review-Button" id="loadMoreBtn">Load More</button>
+    </div>
+  
+  </main>
+  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

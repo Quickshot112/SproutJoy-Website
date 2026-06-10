@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Choose Us</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\Website_Design\Icon.jpg">
+  
+  <script src="../Website_Design/WebsitesJava.js"></script> 
+  
+  <script>
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const slides = document.querySelectorAll('.Rotation-Slide');
+      const total = slides.length;
+
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev', 'next', 'hidden');
+
+        if (index === currentIndex) {
+          slide.classList.add('active');
+        } else if (index === (currentIndex - 1 + total) % total) {
+          slide.classList.add('prev');
+        } else if (index === (currentIndex + 1) % total) {
+          slide.classList.add('next');
+        } else {
+          slide.classList.add('hidden');
+        }
+      });
+    }
+
+    function changeSlide(direction) {
+      const slides = document.querySelectorAll('.Rotation-Slide');
+      const total = slides.length;
+
+      currentIndex = (currentIndex + direction + total) % total;
+      updateCarousel();
+    }
+
+    window.addEventListener('load', () => {
+      updateCarousel();
+
+      // Toggle individual FAQ
+      const faqItems = document.querySelectorAll('.Faqs-Item');
+      faqItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+
+      // Load more / Show less
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const hiddenFaqs = document.querySelectorAll('.Hidden-Faqs');
+      let expanded = false;
+
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+          if (!expanded) {
+            hiddenFaqs.forEach(el => el.style.display = 'block');
+            loadMoreBtn.textContent = 'Show Less';
+            expanded = true;
+          } else {
+            hiddenFaqs.forEach(el => {
+              el.classList.remove('active');
+              el.style.display = 'none';
+            });
+            loadMoreBtn.textContent = 'Load More';
+            expanded = false;
+          }
+        });
+      }
+    });
+  </script>
+  
+  <style>
+
+  .WCU-Section {
+	text-align: center;
+	padding: 40px 20px;
+  }
+
+  .WCU-Section h2 {
+	margin-bottom: 30px;
+	font-size: 22px;
+	font-weight: bold;
+	border: 1px solid black;
+	display: inline-block;
+	padding: 5px 15px;
+	background-color: #fff;
+  }
+
+  .WCU-Video-Box {
+	width: 80%;
+	max-width: 1000px;
+	aspect-ratio: 16 / 9;
+	margin: 0 auto;
+	border: 2px solid black;
+	border-radius: 5px;
+	overflow: hidden;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .activity-video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+  }
+
+  .video-icon {
+	width: 80px;
+	height: 80px;
+	background: black;
+	border-radius: 50%;
+	margin: 0 auto;
+	position: relative;
+  }
+
+  .video-icon::before {
+	content: "";
+	position: absolute;
+	left: 32%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-left: 20px solid white;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+  }
+
+  /* SLIDER SECTION */
+  .WCU-S-Img-Container {
+	position: relative;
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	overflow: hidden;
+  }
+
+  .Rotation-Track {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 400px;
+  }
+
+  .Rotation-Slide {
+	position: absolute;
+	width: 70%;
+	transition: all 0.5s ease-in-out;
+	opacity: 0;
+	transform: scale(0.8);
+	z-index: 0;
+	pointer-events: none;
+  }
+
+  .Rotation-Slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+
+  .Rotation-Slide.active {
+	left: 50%;
+	transform: translateX(-50%) scale(1);
+	z-index: 3;
+	opacity: 1;
+	pointer-events: auto;
+  }
+
+  .Rotation-Slide.prev {
+	left: 10%;
+	transform: translateX(-50%) scale(0.9);
+	filter: blur(2px);
+	opacity: 0.6;
+	z-index: 1;
+  }
+
+  .Rotation-Slide.next {
+	left: 90%;
+	transform: translateX(-50%) scale(0.9);
+	filter: blur(2px);
+	opacity: 0.6;
+	z-index: 1;
+  }
+
+  .Rotation-Slide.hidden {
+	display: none;
+  }
+
+  .Slide-Box {
+	width: 100%;
+	height: 100%;
+	border: 2px solid black;
+	overflow: hidden;
+	border-radius: 4px;
+	background: #eee;
+  }
+
+  .WCU-S-Img-Button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: white !important;
+	border: 1px solid black;
+	padding: 10px;
+	cursor: pointer;
+	z-index: 5;
+  }
+  .WCU-S-Img-Button:hover {
+    background-color: gray !important;
+  }
+
+  .WCU-S-Img-Button.prev {
+	left: 10px;
+  }
+
+  .WCU-S-Img-Button.next {
+	right: 10px;
+  }
+  
+  /* SAFETY POLICIES */
+  .Safety-Grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	justify-items: center;
+  }
+
+  .Safety-Item {
+	text-align: center;
+  }
+  
+  .Safety-Item p {
+    font-size: 18px;
+  }
+
+  .Safety-Img {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	background: #ccc;
+	border: 2px solid black;
+	margin: 0 auto 10px;
+	background-size: cover;
+	background-position: center;
+  }
+	
+  .Safety-Img img {
+	width: 100%;
+    height: 100%;
+	object-fit: cover; 
+	border-radius: 50%;
+	display: block; 
+  }
+
+  /* REVIEWS */
+  .Reviews-Grid {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 50px;
+  }
+
+  .Reviews-Box {
+	width: 250px;
+	height: 200px;
+	border: 2px solid black;
+	Background: #e6ffcc;
+  }
+  
+  .Reviews-Box h2 {
+    font-size: 18px;
+	Background: #F0F8FF;
+  }
+
+
+  /* FAQS */
+  .Faqs-Grid {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	width: 100%;
+  }
+
+  .Faqs-Item {
+	width: 90%;
+	max-width: 1000px; /* Increase the max width to fit larger screens */
+	padding: 10px 20px;
+	border: 2px solid gray;
+	border-radius: 20px;
+	background-color: #fff;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+	text-align: left;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+
+  .Faqs-Item:hover {
+	background-color: #f9f9f9;
+  }
+
+  .Faqs-Question {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: bold;
+	font-size: 16px;
+  }
+
+  .Faqs-Toggle-Icon {
+	font-size: 18px;
+	margin-left: 10px;
+	pointer-events: none; /* So the whole row remains clickable */
+	user-select: none;
+  }
+
+  .Faqs-Answer {
+	display: none;
+	margin-top: 10px;
+	font-size: 15px;
+	color: #444;
+  }
+
+  .Faqs-Item.active .Faqs-Answer {
+	display: block;
+  }
+
+  .Faqs-Item.active .Faqs-Toggle-Icon {
+	transform: rotate(180deg); /* arrow points up when open */
+  }
+
+
+  /* Shared buttons */
+  .WCU-Section button {
+	margin-top: 20px;
+	padding: 6px 16px;
+	border: 1px solid black;
+	background-color: #FFDEAD;
+	cursor: pointer;
+  }
+
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+  
+	.Content-Space {
+      margin-top: 70px;
+	}
+  
+	.Safety-Grid {
+	  grid-template-columns: repeat(2, 1fr);
+	}
+	
+	.Rotation-Track {
+	  min-height: 200px;
+	  height: auto;
+	}
+
+	.WCU-Section h2 {
+	  margin-bottom: 10px; /* tighter spacing below the heading */
+	}
+  }
+
+  </style>
+  
+  <link rel="stylesheet" href="..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+  
+  <main class="Content-Space">
+
+  <div class="Title">
+    <h1>WHY CHOOSE US?</h1>
+  </div>
+
+  <!-- Section: Activities Provided -->
+  <section class="WCU-Section" id="Activities-Provided">
+    <h2>ACTIVITIES PROVIDED</h2>
+    <div class="WCU-Video-Box">
+      <video controls width="100%" poster="Thumbnail.jpg">
+        <source src="Activities.MOV" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Section: Awards and Milestone -->
+  <section class="WCU-Section" style="background-color: #e4d5b7;">
+    <h2>AWARDS AND MILESTONE</h2>
+    <div class="WCU-S-Img-Container">
+      <button class="WCU-S-Img-Button prev" onclick="changeSlide(-1)">❮</button>
+    
+      <div class="WCU-S-Img-Track">
+        <ul class="Rotation-Track" id="TrackRotation">
+          <li class="Rotation-Slide"><div class="Slide-Box"><img src="Award1.jpg" alt="Award 1"></div></li>
+          <li class="Rotation-Slide"><div class="Slide-Box"><img src="Award2.jpg" alt="Award 2"></div></li>
+          <li class="Rotation-Slide"><div class="Slide-Box"><img src="Award3.jpg" alt="Award 3"></div></li>
+        </ul>
+      </div>
+
+      <button class="WCU-S-Img-Button next" onclick="changeSlide(1)">❯</button>
+    </div>
+  </section>
+
+
+    <!-- Section: Safety Policies -->
+    <section class="WCU-Section" style="background-color: #cfd6dc;" id="Safety-Policies">
+      <h2>SAFETY POLICIES</h2>
+      <div class="Safety-Grid">
+        <div class="Safety-Item"><div class="Safety-Img"><img src="Safety1.jpg" alt="Safety 1"></div>
+		  <p>1. Child Supervision Policy</p>
+		</div>
+        <div class="Safety-Item"><div class="Safety-Img"><img src="Safety2.jpg" alt="Safety 2"></div>
+		  <p>2.Emergency Preparedness Policy</p>
+		</div>
+        <div class="Safety-Item"><div class="Safety-Img"><img src="Safety3.jpg" alt="Safety 3"></div>
+		  <p>3. Health and Illness Policy</p>
+		  </div>
+        <div class="Safety-Item"><div class="Safety-Img"><img src="Safety4.jpg" alt="Safety 4"></div>
+		  <p>4. ⁠Hygiene and Sanitation Policy</p>
+		</div>
+        <div class="Safety-Item"><div class="Safety-Img"><img src="Safety5.jpg" alt="Safety 5"></div>
+		  <p>5. ⁠Visitor Access Policy</p>
+		</div>
+        <div class="Safety-Item"><div class="Safety-Img"><img src="Safety6.jpg" alt="Safety 6"></div>
+		  <p>6. ⁠Safe Environment Policy</p>
+		</div>
+      </div>
+    </section>
+  
+  <!-- Section: Parents Reviews -->
+  <section class="WCU-Section" style="background-color: #fff;">
+    <h2>PARENTS REVIEWS</h2>
+    <div class="Reviews-Grid">
+	
+      <div class="Reviews-Box">
+	    <h2> Review 1</h2>
+	    <p>Amazing service!</p>
+		<p>⭐⭐⭐⭐⭐</p>
+	  </div>
+	  
+      <div class="Reviews-Box">
+	    <h2> Review 2</h2>
+	    <p>Warm and attentive</p>
+		<p>⭐⭐⭐⭐⭐</p>
+	  </div>
+	  
+      <div class="Reviews-Box">
+	    <h2> Review 3</h2>
+	    <p>My child loved the nanny</p>
+		<p>⭐⭐⭐⭐⭐</p>
+      </div>
+	  
+      <div class="Reviews-Box">
+	    <h2> Review 4</h2>
+	    <p>Super safe and friendly</p>
+		<p>⭐⭐⭐⭐⭐</p>
+	  </div>
+		
+    </div>
+	
+    <button onclick="location.href='../Why_Choose_Us/ParentsReviews/ParentsReviews.html'">Learn More</button>
+  </section>
+
+  <section class="WCU-Section" style="background-color: #ccccb3;">
+    <h2>FAQS</h2>
+    <div class="Faqs-Grid" id="faqsgrid">
+	
+      <!-- Initially visible FAQs -->
+      <div class="Faqs-Item">
+        <div class="Faqs-Question">
+          <span>What are your operating hours?</span>
+          <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">We operate from 8 AM to 5 PM, Monday to Friday.</div>
+      </div>
+	  
+      <div class="Faqs-Item">
+        <div class="Faqs-Question">
+          <span>Do you offer emergency nanny services?</span>
+          <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">Yes, we offer pop-up nanny services for emergency needs.</div>
+      </div>
+	  
+      <div class="Faqs-Item">
+        <div class="Faqs-Question">
+          <span>Are your staff certified?</span>
+          <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">All staff are professionally trained and certified in childcare.</div>
+      </div>
+	  
+      <div class="Faqs-Item">
+        <div class="Faqs-Question">
+          <span>How do I enroll?</span>
+          <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">You can enroll via our Website Forms</div>
+      </div>
+	  
+      <div class="Faqs-Item">
+        <div class="Faqs-Question">
+          <span>What age groups do you accept?</span>
+          <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">We cater to children aged 16 months to 6 years old.</div>
+      </div>
+
+      <!-- Hidden FAQs (initially collapsed) -->
+      <div class="Faqs-Item Hidden-Faqs" style="display: none;">
+        <div class="Faqs-Question">
+          <span>Can I visit the center before enrolling?</span>
+           <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">Yes, we offer center tours by appointment.</div>
+      </div>
+	  
+      <div class="Faqs-Item Hidden-Faqs" style="display: none;">
+        <div class="Faqs-Question">
+          <span>Do you provide meals?</span>
+          <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">Yes, we provide healthy meals and accommodate allergies.</div>
+      </div>
+	  
+      <div class="Faqs-Item Hidden-Faqs" style="display: none;">
+        <div class="Faqs-Question">
+          <span>Is there CCTV access for parents?</span>
+          <span class="Faqs-Toggle-Icon">▼</span>
+        </div>
+        <div class="Faqs-Answer">Yes, we offer secure CCTV access for enrolled parents.</div>
+      </div>
+    </div>
+
+    <button id="loadMoreBtn">Load More</button>
+  </section>
+
+ 
+  </main
+  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

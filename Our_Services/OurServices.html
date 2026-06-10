@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\Website_Design\Icon.jpg">
+  
+  <script src="../Website_Design/WebsitesJava.js"></script>    
+  
+  <style>
+  
+    /* BANNER */  
+    .Our-Services-Banner {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #ccc;
+    }
+
+    .Our-Services-Banner-Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } 
+  
+    /* Outer container for padding */
+    .Our-Services-Content {
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* Vertical gap between boxes */
+      }
+
+    /* Individual boxes */
+    .Our-Services-Box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid black;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Circle image */
+    .Our-Services-Circle-Img {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background-color: #ccc;
+      border: 3px solid black;
+      flex-shrink: 0;
+    }
+	
+	.Our-Services-Circle-Img img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover; 
+	  border-radius: 50%;
+	  display: block; 
+	}
+
+    /* Text for services */
+    .Our-Services-Circle-Text {
+      flex: 1;
+      margin-left: 300px;
+      margin-right: 20px;
+    }
+
+    .Our-Services-Circle-Text h2 {
+      margin-top: 0;
+    }
+
+    .Our-Services-Circle-Text p {
+      font-size: 17px;
+	  line-height: 1.7;
+	  text-align: justify;
+      margin: 4px 0;
+    }
+
+    .Our-Services-Circle-Text button {
+      margin-top: 10px;
+	  padding: 10px 20px;
+      border: 1px solid #000;
+      background-color: #FFDEAD;
+	  border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .Our-Services-Circle-Text button:hover {
+      background-color: #ccc;
+    }
+	
+	.Our-Services-Box.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .Our-Services-Box.reverse .Our-Services-Circle-Text {
+      margin-left: 100px;
+      margin-right: 200px;
+    }
+
+    /* Responsive */
+	@media (max-width: 768px) {
+	
+
+	  .Content-Space {
+        margin-top: 70px;
+	  }
+	  
+	  .Our-Services-Box {
+	    flex-direction: column;
+        text-align: center;
+      }
+	  
+	  .Our-Services-Box.reverse .Our-Services-Circle-Text {
+	    margin: 0; /* Reset margins for mobile */
+	    text-align: center; /* Optional: center align text */
+	  }
+	  
+	  .Our-Services-Box.reverse {
+	    flex-direction: column;
+	  }
+
+      .Our-Services-Circle-Text {
+        margin: 0;
+	    padding-top: 20px;
+      }
+
+      .Our-Services-Circle-Text button {
+        align-self: center;
+      }
+  
+      .Our-Services-Circle-Img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+	.Content-Space {
+      padding-top: 10px;
+	  padding-bottom: 30px;
+    }
+
+  
+  </style>
+  
+  <link rel="stylesheet" href="..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+  
+  <main class="Content-Space">
+  
+  <!-- OUR SERVICES BANNER -->
+  <div class="Our-Services-Banner">
+    <img class="Our-Services-Banner-Img" src="Banner.jpg" alt="Our Services Banner">
+  </div>
+  
+  <div class="Title">
+    <h1>OUR SERVICES</h1>
+  </div>
+
+  <!-- SERVICE CONTENTS SECTIONS -->
+  <div class="Our-Services-Content">
+
+    <!-- BOX 1 -->
+    <div class="Our-Services-Box">
+      <div class="Our-Services-Circle-Img"> <img src="Service1.jpg" alt="Service 1"> </div>
+      <div class="Our-Services-Circle-Text">
+        <h2>DAYCARE PROGRAMMES</h2>
+        <p>Our daycare offers thoughtfully designed programmes for children aged 16 months to 6 years, supporting growth through play and exploration. 
+		From sensory play in Play House to school readiness in Senior Whaley, each stage encourages creativity, social skills, and confidence in a safe, nurturing environment.</p>
+        <button onclick="location.href='../Our_Services/Daycare_Programme/DaycareProgramme.html'">Learn More</button>
+      </div>
+    </div>
+
+    <!-- BOX 2 -->
+    <div class="Our-Services-Box reverse">
+      <div class="Our-Services-Circle-Img"> <img src="Service2.jpg" alt="Service 1"> </div>
+      <div class="Our-Services-Circle-Text">
+        <h2>NANNY CARE PLAN</h2>
+        <p>The Nanny Care Plan offers tailored childcare services based on your child’s age and needs. 
+		It includes an Infant Plan for newborns (0–2 years) with specialized care, a Toddler Plan (2–4 years) focused on interactive learning and play, and a Full-Day Plan (4+ years) for comprehensive, all-day nanny support. 
+		Each plan ensures safe, age-appropriate care in a nurturing environment.</p>
+        <button onclick="location.href='../Our_Services/Nanny_Care_Plan/NannyCarePlan.html'">Learn More</button>
+      </div>
+    </div>
+
+    <!-- BOX 3 -->
+    <div class="Our-Services-Box">
+      <div class="Our-Services-Circle-Img"> <img src="Service3.jpg" alt="Service 1"> </div>
+      <div class="Our-Services-Circle-Text">
+        <h2>POP-UP NANNY</h2>
+        <p>Our Pop-Up Nanny service offers flexible, on-site childcare for special events, short-term needs, or weekend programmes. 
+		Trained caregivers create a safe and engaging play environment, allowing parents to focus while their children are well cared for nearby. 
+		It’s the perfect solution for temporary or event-based childcare support.</p>
+        <button onclick="location.href='../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html'">Learn More</button>
+      </div>
+    </div>
+
+  </div>
+
+ 
+  </main>
+  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

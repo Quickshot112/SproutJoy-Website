@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daycare Programme</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\..\Website_Design\Icon.jpg">
+  
+  <script src="../../Website_Design/WebsitesJava.js"></script>
+  
+  <style>
+  
+    html {
+      scroll-behavior: smooth;
+    }
+  
+    /* BANNER */
+    .DP-Banner {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #ccc;
+    }
+
+    .DP-Banner-Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+	
+	
+    /* DAYCARE PROGRAMMES */
+    .DP-Top-Section {
+      padding: 0 5%;
+      padding-bottom: 100px;
+    }
+
+    .DP-Top-Grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .DP-Top-Box {
+      width: 300px;
+      min-height: 200px;
+      text-align: center;
+    }
+	
+	.DP-Top-Box h2{ 
+	  font-size: 20px;
+	}
+
+    .DP-Top-Img {
+      width: 100%;
+      min-height: 200px;
+      margin-bottom: 10px;
+	}
+
+    .DP-Top-Img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .DP-Top-Box button {
+      padding: 6px 12px;
+      background: #FFDEAD;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+	
+	
+    /* PROGRAMMES OPTIONS */
+    .DP-Below-Section {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding: 40px 5%;
+    }
+
+    .DP-Below-Row {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .DP-Below-Left {
+      width: 190px;
+      text-align: center;
+      padding-bottom: 80px;
+    }
+
+    .DP-Below-Left h2 {
+      font-size: 20px;
+      border: 2px solid black;
+      padding: 6px ;
+      margin-bottom: 20px;
+	  Background: #DCDCDC;
+    }
+
+    .DP-Below-Rounded-Shape {
+      width: 190px;
+      height: 50px;
+      border-radius: 30px;
+      background: #d2afff;
+      border: 2px solid black;
+      margin: 0 auto 10px;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .DP-Below-Button {
+      width: 150px;
+      padding: 6px 0;
+      border-radius: 30px;
+      border: 1px solid black;
+      background: #FFDEAD;
+      font-size: 17px;
+      margin: 0 auto;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .DP-Below-Right {
+      flex: 2;
+      padding: 20px 0;
+      margin-bottom: 20px;
+      padding-top: 12px;
+    }
+
+    .DP-Below-Right-Border {
+      border-top: 1px dashed black;
+      border-bottom: 1px dashed black;
+      padding: 20px;
+    }
+
+    .DP-Below-Right p {
+      margin: 10px 0;
+      line-height: 1.5;
+	  text-align: justify;
+    }
+
+
+	.Content-Space {
+      padding-top: 10px;
+	  padding-bottom: 30px;
+    }  
+	
+	.Title {
+	  padding-bottom: 20px;
+	  padding-top: 20px;
+	}
+	
+    /* Responsive */
+	@media (max-width: 768px) {
+	
+	  .DP-Below-Left h2 {
+	    font-size: 17px;
+	  }
+
+	  .DP-Below-Rounded-Shape {
+	    font-size: 17px;
+	  }
+    }
+  
+  </style>
+  
+  <link rel="stylesheet" href="..\..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+
+  <main class="Content-Space">
+  
+  <!--BANNER -->
+  <div class="DP-Banner">
+    <img class="DP-Banner-Img" src="Banner.jpg" alt="Organizations Background Banner">
+  </div>
+  
+  <!-- DAYCARE PROGRAMMES -->
+  <div class="DP-Top-Section">
+    <div class="Title">
+      <h1>DAYCARE PROGRAMMES<h1>
+    </div>
+    <div class="DP-Top-Grid">
+	
+      <div class="DP-Top-Box">
+        <div class="DP-Top-Img"> <img  src="16–36Months.jpg" alt="Organizations Background Banner"> </div>
+        <h2>(16–36 months old)</h2>
+        <p>A fun and safe space for toddlers to explore and grow through play.</p>
+        <button onclick="location.href='#Program1'">Read More</button>
+      </div>
+	  
+      <div class="DP-Top-Box">
+        <div class="DP-Top-Img"> <img  src="3Years.jpg" alt="Organizations Background Banner"> </div>
+        <h2>(3-4 years old)</h2>
+        <p>Where early learners begin their journey through guided activities and discovery.</p>
+        <button onclick="location.href='#Program2'">Read More</button>
+      </div>
+	  
+      <div class="DP-Top-Box">
+        <div class="DP-Top-Img"> <img  src="5Years.jpg" alt="Organizations Background Banner"> </div>
+        <h2>(5 years old)</h2>
+        <p>Nurturing curiosity and independence in young minds, one day at a time.</p>
+        <button onclick="location.href='#Program3'">Read More</button>
+      </div>
+	  
+      <div class="DP-Top-Box">
+        <div class="DP-Top-Img"> <img  src="6Years.jpg" alt="Organizations Background Banner"> </div>
+        <h2>(6 years old)</h2>
+        <p>Preparing children for big school with confidence, creativity, and care</p>
+        <button onclick="location.href='#Program4'">Read More</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PROGRAMMES OPTIONS -->
+	<div class="DP-Below-Section">
+
+	  <div class="Title">
+		<h1>PROGRAMMES OPTIONS</h1>
+	  </div>
+
+	  <!-- PROGRAM 1: Play House -->
+	  <div class="DP-Below-Row">
+		<div class="DP-Below-Left">
+		  <h2 id="Program1">Play House</h2>
+		  <div class="DP-Below-Rounded-Shape">16–36 months old</div>
+		  <button class="DP-Below-Button" onclick="location.href='DP_Form/DPForm.html?form=Program1Form'">Enroll Today</button>
+		</div>
+		<div class="DP-Below-Right">
+		  <div class="DP-Below-Right-Border">
+			<p>The Play House programme offers a gentle introduction to early learning, designed specifically for toddlers in their most curious and exploratory stage. 
+			With a focus on sensory exploration and motor development, children engage in age-appropriate play that encourages touch, movement and sound. 
+			From interactive games to soft physical play, our nurturing environment supports social bonding, early language development and emotional security.</p>
+
+			<p><strong>Key Features:</strong> Daily sensory bins for tactile learning, animal sound games for early language development, soft climbing mats for motor skills, 
+			bubble play for sensory stimulation, guided story time or music exploration, and dedicated nap and wind-down routines. Children also enjoy breakfast and snack breaks, 
+			indoor/outdoor free play, and a 1:4 staff-to-child ratio to ensure safety and personalized attention.</p>
+			<p><strong>Operation Time:</strong> Monday to Friday, 7:30 AM – 5:30 PM</p>
+			<p><strong>Booking Requirement:</strong> Pre-registration required 2 days before desired start date.</p>
+			<p><strong>Price:</strong> RM800/month (includes snacks)</p>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- PROGRAM 2: Play School -->
+	  <div class="DP-Below-Row">
+		<div class="DP-Below-Left">
+		  <h2 id="Program2">Play School</h2>
+		  <div class="DP-Below-Rounded-Shape">3–4 Years old</div>
+		  <button class="DP-Below-Button" onclick="location.href='DP_Form/DPForm.html?form=Program2Form'">Enroll Today</button>
+		</div>
+		<div class="DP-Below-Right">
+		  <div class="DP-Below-Right-Border">
+			<p>Our Play School programme provides a more structured play-based environment where young learners begin to express themselves, form friendships and explore the world through imagination. 
+			Through creative storytelling, dress-up, hands-on crafts and guided play, children build key skills in communication, problem-solving, and self-regulation.</p>
+
+			<p><strong>Key Features:</strong> Themed dress-up corner for imaginative play, playdough and puzzle stations for fine motor skills, puppet-led story time to build early literacy, 
+			group circle time with movement games, and daily sensory or art activities to inspire creativity. Afternoon sessions include dramatic play, music exploration, 
+			and rest time for full-day children. 1:5 staff-to-child ratio ensures personalized support and supervision.</p>
+			<p><strong>Operation Time:</strong> Monday to Friday, 7:30 AM – 5:30 PM</p>
+			<p><strong>Booking Requirement:</strong> Must book at least 3 days in advance. Priority given to returning students.</p>
+			<p><strong>Price:</strong> RM850/month (art materials included)</p>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- PROGRAM 3: Junior Whaley -->
+	  <div class="DP-Below-Row">
+		<div class="DP-Below-Left">
+		  <h2 id="Program3">Junior Whaley</h2>
+		  <div class="DP-Below-Rounded-Shape">5 Years old</div>
+		  <button class="DP-Below-Button" onclick="location.href='DP_Form/DPForm.html?form=Program3Form'">Enroll Today</button>
+		</div>
+		<div class="DP-Below-Right">
+		  <div class="DP-Below-Right-Border">
+			<p>Junior Whaley is designed to expand curiosity, independence, and foundational academic thinking. 
+			Children explore big ideas through fun, age-appropriate experiences like science discovery, movement games, music and art. 
+			With a balance of structured learning and creative freedom, this programme fosters cognitive development, social-emotional growth, and confidence in expressing ideas.</p>
+
+			<p><strong>Key Features:</strong> Morning yoga movement games, music & instrument play, hands-on science experiments, creative art and craft sessions, 
+			story circle reflections, quiet rest periods, outdoor gross motor activities, and puzzle-based learning. 1:6 staff-to-child ratio.</p>
+			<p><strong>Operation Time:</strong> Monday to Friday, 7:30 AM – 5:30 PM</p>
+			<p><strong>Booking Requirement:</strong> Registration required at least 3 days in advance. Subject to availability.</p>
+			<p><strong>Price:</strong> RM900/month (materials included)</p>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- PROGRAM 4: Senior Whaley -->
+	  <div class="DP-Below-Row">
+		<div class="DP-Below-Left">
+		  <h2 id="Program4">Senior Whaley</h2>
+		  <div class="DP-Below-Rounded-Shape">6 Years old</div>
+		  <button class="DP-Below-Button" onclick="location.href='DP_Form/DPForm.html?form=Program4Form'">Enroll Today</button>
+		</div>
+		<div class="DP-Below-Right">
+		  <div class="DP-Below-Right-Border">
+			<p>Senior Whaley is where future-ready learners thrive. This programme focuses on preparing children for primary school through critical thinking challenges, project-based exploration and teamwork. 
+			Whether building with recycled materials, solving math puzzles or leading a group scavenger hunt, children learn to plan, collaborate, and problem-solve.</p>
+
+			<p><strong>Key Features:</strong> Math Magic Zone for critical thinking, hands-on robotics building, group Recycled City eco-projects, indoor/outdoor scavenger hunts, 
+			daily reflection & journaling sessions, challenge board games for teamwork, and free project time for self-guided exploration. 1:7 staff-to-child ratio.</p>
+			<p><strong>Operation Time:</strong> Monday to Friday, 7:30 AM – 5:30 PM</p>
+			<p><strong>Booking Requirement:</strong> Registration required at least 1 week in advance. Open for year-round intake.</p>
+			<p><strong>Price:</strong> RM950/month (includes workbook and activity kit)</p>
+		  </div>
+		</div>
+	  </div>
+
+	</div>
+
+
+  
+  </main>  
+  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

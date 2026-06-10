@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\Website_Design\Icon.jpg">
+  
+  <script src="../Website_Design/WebsitesJava.js"></script>  
+  
+  <style>
+  
+
+    /* BANNER */
+    .Contact-Us-Banner-Container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #ccc;
+    }
+
+    .Contact-Us-Banner-Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* INFO SECTION */
+    .Contact-Us-Info-Section {
+      padding: 60px 0;
+    }
+
+    .Contact-Us-Info-Box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 70px;
+      justify-content: center;
+    }
+
+    .Contact-Us-Box {
+      width: 500px;
+      min-height: 450px;
+      background: #E2F1F7;
+      border: 2px solid #000;
+      padding: 20px;
+    }
+	
+	.Contact-Us-Box h3 {
+	  font-size: 25px;
+	}
+	
+	.Contact-Us-Box p {
+	  text-indent: -80px; /* negative indent pulls the label left */
+	  padding-left: 80px; /* pushes all text (including wrapped lines) right */
+	  line-height: 2.0;
+	  font-size: 17x;
+	  text-align: justify;
+	}
+	
+	.Contact-Us-Social-Media {
+	  margin-top: 20px;
+	  display: flex;
+	  justify-content: center; /* center horizontally */
+	  gap: 15px; /* space between icons */
+	}
+
+	.Social-Icon {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  width: 150px;
+	  text-decoration: none; /* remove underline */
+	}
+
+	.Social-Icon img {
+	  width: 80px;
+	  height: 80px;
+	  border: 2px solid #000;
+	  border-radius: 8px; /* or 50% if round */
+	  background-color: #fff;
+	  padding: 5px;
+	  transition: transform 0.3s ease, background-color 0.3s ease;
+	}
+
+	.Social-Icon:hover img {
+	  transform: scale(1.1);
+	  background-color: #ddd;
+	}
+
+	.Social-Icon span {
+	  margin-top: 5px;
+	  font-size: 14px;
+	  color: #333;
+	  text-align: center;
+	}
+
+
+    /* CAREER SECTION */
+    .Contact-Us-Career-Section {
+      padding: 60px 20px;
+      background: #C4E2EA;
+      text-align: center;
+    }
+
+    .Contact-Us-Career-Section h2 {
+      margin-bottom: 20px;
+    }
+
+    .Contact-Us-Career-Content {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 40px;
+      justify-items: center;
+    }
+
+    .Contact-Us-Career-Img {
+      width: 180px;
+      height: 180px;
+      background: #ccc;
+      border: 2px solid #000;
+    }
+	
+    .Contact-Us-Career-Img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .Contact-Us-Career-Text {
+      max-width: 400px;
+    }
+	
+    .Contact-Us-Career-Text p {
+	  line-height: 1.5;
+	  font-size: 18px;
+	}
+
+    .Contact-Us-Career-Button {
+	  display: block;
+	  margin: 15px auto 0 auto;
+	  padding: 10px 20px;
+	  background-color: #FFDEAD;
+	  border: 1px solid #000;
+	  color: black;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+
+	.Contact-Us-Career-Button button:hover {
+	  background-color: gray;
+	}
+
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+	
+	  .Content-Space {
+        margin-top: 70px;
+	  }
+	
+      .Contact-Us-Info-Box {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .Contact-Us-Box {
+        width: 90%;
+      }
+
+      .Contact-Us-Career-Content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .Contact-Us-Career-Text {
+        order: -1;
+      }
+
+      .career-images-wrapper {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .Contact-Us-Career-Img {
+        width: 100px;
+        height: 100px;
+      }
+
+    }
+  
+  
+  </style>
+  
+  <link rel="stylesheet" href="..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+
+  <main class="Content-Space">
+ 
+  <!-- CONTACT BANNER -->
+  <div class="Contact-Us-Banner-Container">
+    <img class="Contact-Us-Banner-Img" src="Banner.jpg" alt="Contact Us Banner">
+  </div>
+  
+  <div class="Title">
+    <h1>CONTACT US</h1>
+  </div>
+
+  <!-- CONTACT INFO SECTION -->
+  <div class="Contact-Us-Info-Section">
+    <div class="Contact-Us-Info-Box">
+      <div class="Contact-Us-Box">
+        <h3>Get in Touch</h3>
+        <p><b>Email:</b> sproutjoy@gmail.com</p>
+        <p><b>Phone:</b> +123-456-789</p>
+        <p><b>Address:</b> 1-2, Jalan Kasturi 1, Cheras 11 Miles, 43200 Cheras, Selangor</p>
+        <p><b>Operating Hours:</b> Mon - Fri, 8am - 5pm</p>
+      </div>
+      <div class="Contact-Us-Box">
+        <h3>Send us a message</h3>
+        <p style="text-indent: 0; padding-left: 0;">We’re happy to answer any questions you have. Whether it’s about our daycare programs, job opportunities, or general inquiries, we’d love to hear from you. 
+		Use the contact information given to reach out and one of our team members will get back to you as soon as possible. 
+		Your feedback and concerns matter to us because your peace of mind is our priority.</p>
+		
+		<!-- SOCIAL MEDIA ICONS -->
+		<div class="Contact-Us-Social-Media">
+		  <a href="https://www.facebook.com" target="_blank" class="Social-Icon">
+			<img src="FB.jpg" alt="Facebook" />
+			<span>@SproutJoyFB</span>
+		  </a>
+		  <a href="https://www.instagram.com" target="_blank" class="Social-Icon">
+			<img src="IG.jpg" alt="Instagram" />
+			<span>@sproutjoy.official</span>
+		  </a>
+		  <a href="https://wa.me" target="_blank" class="Social-Icon">
+			<img src="WA.jpg" alt="WhatsApp" />
+			<span>+6019 309 4128</span>
+		  </a>
+		</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREERS SECTION -->
+  <div class="Contact-Us-Career-Section">
+    <h2>CAREER WITH US</h2>
+    <div class="Contact-Us-Career-Content">
+      <div class="Contact-Us-Career-Img"> <img  src="Career1.jpg" alt="Career 1"> </div>
+
+      <div class="Contact-Us-Career-Text">
+        <p>Join our dedicated team in creating a nurturing environment for children.</p>
+        <p>We welcome enthusiastic caregivers passionate about early childhood development.</p>
+      </div>
+
+      <div class="Contact-Us-Career-Img"> <img  src="Career2.jpg" alt="Career 2"> </div>
+    </div>
+    <button class="Contact-Us-Career-Button" onclick="location.href='../Contact_Us/Job_Application/JobApplication.html'">Apply now</button>
+  </div>
+
+ 
+ 
+  </main>  
+
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

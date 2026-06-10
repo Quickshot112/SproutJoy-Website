@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet Our Team</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\..\Website_Design\Icon.jpg">
+  
+  <script src="../../Website_Design/WebsitesJava.js"></script>
+  
+  <style>
+  
+    /* ORGANIZATIONS CHART */
+    .MOT-Organizations-Chart-Container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #ccc;
+    }
+
+    .MOT-Organizations-Chart-Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+	
+    /* Outer container for padding */
+    .MOT-Content {
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      }
+
+    /* Individual boxes */
+    .MOT-Box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid black;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Circle image */
+    .MOT-Circle-Img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #ccc;
+      border: 3px solid black;
+      flex-shrink: 0;
+    }
+	
+	.MOT-Circle-Img img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover; 
+	  border-radius: 50%;
+	  display: block; 
+	}
+
+    /* Text for services */
+    .MOT-Circle-Text {
+      flex: 1;
+      margin-left: 200px;
+      margin-right: 20px;
+    }
+
+    .MOT-Circle-Text h2 {
+      margin-top: 0;
+      font-size: 25px;
+	  font-weight: bold;
+      line-height: 1;
+    }
+	
+    .MOT-Circle-Text h3 {
+      line-height: 0.7;
+      font-size: 20px;
+	  font-weight: bold;
+    }
+
+    .MOT-Circle-Text p {
+	  font-size: 18px;
+	  line-height: 1.5;
+      margin: 4px 0;
+	  text-align: justify;
+    }
+
+    .MOT-Circle-Text button:hover {
+      background-color: #ccc;
+    }
+
+    /* Responsive */
+	@media (max-width: 768px) {
+	
+	  .Content-Space {
+        margin-top: 70px;
+	  }
+	
+	  .MOT-Box {
+	    flex-direction: column;
+        text-align: center;
+      }
+
+      .MOT-Circle-Text {
+        margin: 0;
+	    padding-top: 20px;
+      }
+	  
+      .MOT-Circle-Img {
+        width: 200px;
+        height: 200px;
+      }
+	  
+      .MOT-Circle-Text p {
+	    font-size: 15px;
+      }
+    }
+
+	.Content-Space {
+      padding-top: 10px;
+	  padding-bottom: 20px;
+    }
+  
+  </style>
+  
+  <link rel="stylesheet" href="..\..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+  
+  <main class="Content-Space">
+  
+  <div class="Title">
+    <h1>MEET OUR TEAM</h1>
+  </div>
+  
+  <!-- ORGANIZATIONS CHART  -->
+  <div class="MOT-Organizations-Chart-Container">
+    <img class="MOT-Organizations-Chart-Img" src="OrganizationalChart.png" alt="Organizations Chart">
+  </div>
+  
+  
+  <!-- SERVICE CONTENTS SECTIONS -->
+  <div class="MOT-Content">
+
+    <!-- BOX 1 -->
+    <div class="MOT-Box">
+      <div class="MOT-Circle-Img"><img src="TeamMember1.png" alt="Team Member 1"></div>
+      <div class="MOT-Circle-Text">
+        <h2>Mr. Nuaim</h2>
+		<h3>Owner & Principal</h3>
+        <p>Hi, I’m Mr. Nuaim. I hold a Diploma in Early Childhood Education and am a Certified Daycare Administrator. 
+		I started SproutJoy because I saw how difficult it was for working mothers to find quality childcare they could truly trust. 
+		I believe that every child deserves a safe, warm place to grow and discover their strengths. 
+		That’s why I’m dedicated to creating a loving environment where children feel happy and parents feel at ease. 
+		I’m known for staying calm even in challenging situations and always giving my full heart to every child under our care.</p>
+      </div>
+    </div>
+
+    <!-- BOX 2 -->
+    <div class="MOT-Box">
+      <div class="MOT-Circle-Img"><img src="TeamMember2.png" alt="Team Member 2"></div>
+      <div class="MOT-Circle-Text">
+        <h2>Ms. Shalihah Hanaan</h2>
+		<h3>Manager</h3>
+        <p>Hello, I’m Ms. Shalihah. I hold a Bachelor’s degree in Business Administration and am certified in Childcare Management and Safety. 
+		I believe that organizing a daycare is like creating a beautiful rhythm and of course everyone plays their part with love. 
+		I’m known for being organized, approachable, and always ready to solve problems with a smile. 
+		I especially love planning our weekly themed activities, like Under the Sea Week and Mini Gardeners Day, to make every day exciting for our little ones.</p>
+      </div>
+    </div>
+
+    <!-- BOX 3 -->
+    <div class="MOT-Box">
+      <div class="MOT-Circle-Img"><img src="TeamMember3.png" alt="Team Member 3"></div>
+      <div class="MOT-Circle-Text">
+        <h2>Ms. Anis Shazleen</h2>
+		<h3>Lead Teacher</h3>
+        <p>Hi there, I’m Ms. Anis, your child’s Lead Teacher here at SproutJoy. 
+		I hold a Bachelor’s degree in Early Childhood Education and I’m First Aid certified. 
+		My teaching philosophy is simple: Children learn best when they feel loved, safe, and heard. 
+		I’m creative, patient, and passionate about making learning fun and meaningful. 
+		I also play the guitar and love leading sing-along sessions during circle time and it’s the best part of my day.</p>
+      </div>
+    </div>
+	
+    <!-- BOX 4 -->
+    <div class="MOT-Box">
+      <div class="MOT-Circle-Img"><img src="TeamMember4.png" alt="Team Member 4"></div>
+      <div class="MOT-Circle-Text">
+        <h2>Ms. Balqis Nabila</h2>
+		<h3>Assistant Teacher</h3>
+        <p>Hey, I’m Ms. Balqis. I have a Certificate in Early Childhood Care and I’m currently pursuing my Diploma in Education. 
+		For me, a child’s smile is the best reward after a long day. I’m gentle, cheerful, and full of energy when it comes to engaging with the children. 
+		I especially enjoy storytelling with hand puppets to bring stories to life and keep the children’s imaginations growing.</p>
+      </div>
+    </div>
+	
+    <!-- BOX 5 -->
+    <div class="MOT-Box">
+      <div class="MOT-Circle-Img"><img src="TeamMember5.png" alt="Team Member 5"></div>
+      <div class="MOT-Circle-Text">
+        <h2>Ms. Farah Aqilah</h2>
+		<h3>Admin & Marketing</h3>
+        <p>Hello, I’m Ms. Farah, the person behind our website posts and communication. 
+		I hold a Diploma in Marketing and Communications. I believe that sharing our daycare stories helps parents feel part of our big family. 
+		I’m friendly, creative, and love capturing candid moments of our children’s activities to share with you. 
+		I also design all our daycare posters and updates to keep you connected with everything happening here at SproutJoy.</p>
+      </div>
+    </div>
+
+  </div>
+  
+  </main>
+  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

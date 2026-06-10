@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="OurServices.xsl"?>
+
+<OurServices>
+
+  <Service type="DAYCARE PROGRAMMES">
+    <description>Programmes for children aged 16 months to 6 years, supporting growth through play and structured learning.</description>
+    <Programmes>
+      <Programme name="Play House" age="16–36 months" code="DP01">
+        <operation time="7:30 AM – 5:30 PM" days="Mon–Fri" />
+        <booking notice="2 days in advance" />
+        <price>RM800/month</price>
+      </Programme>
+      <Programme name="Play School" age="3–4 years" code="DP02">
+        <operation time="7:30 AM – 5:30 PM" days="Mon–Fri" />
+        <booking notice="3 days in advance" />
+        <price>RM850/month</price>
+      </Programme>
+      <Programme name="Junior Whaley" age="5 years" code="DP03">
+        <operation time="7:30 AM – 5:30 PM" days="Mon–Fri" />
+        <booking notice="3 days in advance" />
+        <price>RM900/month</price>
+      </Programme>
+      <Programme name="Senior Whaley" age="6 years" code="DP04">
+        <operation time="7:30 AM – 5:30 PM" days="Mon–Fri" />
+        <booking notice="1 week in advance" />
+        <price>RM950/month</price>
+      </Programme>
+    </Programmes>
+  </Service>
+
+  <Service type="NANNY CARE PLAN">
+    <description>Flexible nanny care plans tailored by age and daily routines.</description>
+    <Plans>
+      <Plan name="Infant Plan" age="0–2 years" code="NCP01">
+        <operation time="7:30 AM – 6:00 PM" days="Mon–Sat" />
+        <booking notice="2 days in advance" />
+        <price>RM1,200/month</price>
+      </Plan>
+      <Plan name="Toddler Plan" age="2–4 years" code="NCP02">
+        <operation time="8:00 AM – 6:30 PM" days="Mon–Sat" />
+        <booking notice="3 days in advance" />
+        <price>RM1,100/month</price>
+      </Plan>
+      <Plan name="Full-Day Plan" age="4+ years" code="NCP03">
+        <operation time="7:30 AM – 7:00 PM" days="Mon–Sun" />
+        <booking notice="1 week in advance" />
+        <price>RM1,300/month or RM50/hour</price>
+      </Plan>
+    </Plans>
+  </Service>
+
+  <Service type="POP-UP NANNY">
+    <description>On-demand nanny services for events, emergencies, or short-term needs.</description>
+    <Details>
+      <features>Flexible booking, trained for events, 1:3 ratio</features>
+      <operation time="7:00 AM – 10:00 PM" days="Daily" />
+      <booking notice="Minimum 4 hours in advance" />
+      <price>RM50/hour or RM400/day</price>
+    </Details>
+  </Service>
+
+</OurServices>

@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:'Comic Sans MS', cursive, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+.Title h1 {
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+header {
+  background: #B0C4DE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+#mainHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.4s ease-in-out;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  width: 90px;
+  height: 60px;
+  background: url('Logo.jpg') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  padding: 8px 12px;
+  border: none;
+  background: #FFDEAD;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.dropbtn:hover {
+  background-color: white;
+  color: DimGray;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFF0F5;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  z-index: 999;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Make dropdown visible when active in JS */
+.dropdown.active-dropdown .dropdown-content {
+  display: block;
+}
+
+/* Show nav when toggled on mobile */
+nav.show {
+  display: flex;
+}
+
+.search {
+  position: absolute;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: url('Search.jpg') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  border: none;
+  z-index: 1001; /* ensure it’s above other elements */
+}
+
+.floating-search {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1002;
+  background: white;
+  padding: 10px;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  display: flex;
+  gap: 5px;
+}
+
+.floating-search input[type="text"] {
+  padding: 5px;
+  width: 180px;
+  font-size: 14px;
+}
+
+.floating-search button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+	
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+	
+  .Content-Space {
+	margin-top: 0px;
+  }
+
+  .dropbtn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  header {
+    position: relative;
+  }
+  
+  nav {
+    display: none; /* hide nav links by default */
+    flex-direction: column;
+    width: 100%;
+    background-color: #B0C4DE;
+    margin-top: 18px;
+  }
+
+  nav.show {
+    display: flex; /* show nav links when toggled */
+  }
+  
+  .logo {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    z-index: 1001;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('Menu.jpg') no-repeat center center; 
+    background-size: contain;
+    cursor: pointer;
+    align-self: flex-end;
+	margin-left: 520px;
+  }
+
+  .search {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+}
+
+button:hover {
+  background-color: darkgray;
+}
+
+.Content-Space {
+  padding-top: 80px;
+  flex: 1;
+}
+
+#searchResultsPopup {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  border-left: 2px solid #ccc;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  z-index: 10000;
+}
+/* Style for buttons in search results */
+#searchResultsPopup button {
+  background-color: #FFDEAD;
+  border: 1px solid #000;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  line-height: 10px;
+  font-family: Arial, sans-serif;
+}
+
+#searchResultsPopup button:hover {
+  background-color: gray;
+}

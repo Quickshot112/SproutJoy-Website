@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pop-Up Nanny</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\..\Website_Design\Icon.jpg">
+  
+  <script src="../../Website_Design/WebsitesJava.js"></script>
+  
+  <style>
+  
+    /* POP-UP NANNY STYLES */
+    .PUN-Section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .PUN-TextBox {
+      border: 2px solid #000;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 30px;
+      background-color: #ffffe6;
+	  text-align: justify;
+    }
+
+    .PUN-Button {
+	  display: block;
+	  margin: 15px auto 0 auto;
+	  padding: 10px 20px;
+	  background-color: #FFDEAD;
+	  border: 1px solid #000;
+	  color: black;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+
+	.PUN-Button button:hover {
+	  background-color: gray;
+	}
+
+    .PUN-Img-Box {
+      display: flex;
+      justify-content: center;
+      gap: 300px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .PUN-Img{
+      width: 220px;
+      height: 220px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      background-color: #ccc;
+    }
+	
+    .PUN-Img img{
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover; 
+	  display: block; 
+      border-radius: 12px;
+	}
+	
+	.Contact-Us-Box p,
+	.NCP-Card p,
+	.PUN-TextBox p {  
+	  line-height: 2.0;      
+	}
+
+    @media (max-width: 768px) {
+      .PUN-Img {
+        width: 150px;
+        height: 150px;
+      }
+	  
+	  .PUN-Img-Box {
+	    gap: 200px;
+	  }
+
+      .PUN-TextBox {
+        padding: 15px;
+      }
+    }  
+  
+  </style>
+  
+  <link rel="stylesheet" href="..\..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+
+  <main class="Content-Space">
+  
+    <div class="PUN-Section">
+	  
+    <div class="Title">
+      <h1>Pop-up nanny</h1>
+    </div>
+
+    <div class="PUN-TextBox">
+      <p>Our pop-up nanny service offers on-demand care tailored for events, emergencies, or spontaneous needs. Whether it's a work meeting or a special night out, we've got you covered with short-notice support.</p>
+      <p style="text-indent: -120px; padding-left: 120px; line-height: 2.0; "><b>Key Features:</b> Flexible hourly or daily booking, trained nannies for events (weddings, parties, conferences), emergency childcare, engaging play sessions, meal and nap supervision, 1:3 staff-to-child ratio.</p>
+	</div>
+
+    <div class="PUN-TextBox">
+      <p>Our experienced nannies are vetted and trained to adapt to new environments quickly, ensuring your child is safe, comfortable, and engaged even on short notice.</p>
+      <p><strong>Operation Time:</strong> Available daily from 7:00 AM – 10:00 PM (extended hours upon request)</p>
+      <p><strong>Booking Requirement:</strong> Minimum 4-hour notice required for same-day bookings</p>
+      <p><strong>Price:</strong> RM50/hour or RM400/day (discounts for multiple children)</p>
+    </div>
+
+      <button class="PUN-Button" onclick="location.href='PUN_Form/PUNForm.html'">Book Now</button>
+
+      <div class="PUN-Img-Box"> 
+        <div class="PUN-Img"> <img src="PopNanny1.jpg" alt="Service 1"> </div>
+        <div class="PUN-Img"> <img src="PopNanny2.jpg" alt="Service 1"> </div>
+      </div>
+    </div>
+  
+  </main>  
+  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

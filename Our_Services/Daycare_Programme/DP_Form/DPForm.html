@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daycare Programme Registration Form</title>
+
+  <link rel="icon" type="image/jpeg" href="../../../Website_Design/Icon.jpg">
+  <script src="../../../Website_Design/WebsitesJava.js"></script>
+  <link rel="stylesheet" href="../../../Website_Design/WebsiteLayout.css">
+
+  <style>
+    .DP-Timetable-Banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 20px 0;
+      padding-bottom: 20px;
+    }
+
+    .DP-Timetable-Banner img {
+      width: 90%;
+      max-width: 650px;
+      height: auto;
+      border: 2px solid #000;
+      border-radius: 8px;
+    }
+
+    .DP-Form-Section {
+      display: none;
+      max-width: 800px;
+      margin: 40px auto;
+      border: 2px solid black;
+      padding: 30px;
+      background: #f9f9f9;
+    }
+
+    .DP-Form-Section.show {
+      display: block;
+    }
+
+    .DP-Form-Section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .DP-Form-Group {
+      margin-bottom: 20px;
+    }
+
+    .DP-Form-Group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .DP-Form-Group input,
+    .DP-Form-Group select,
+    .DP-Form-Group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px dotted black;
+    }
+
+    .DP-Form-Group textarea {
+      height: 80px;
+    }
+
+    .DP-Form-Section button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 24px;
+      font-size: 16px;
+      border: 2px solid black;
+      border-radius: 30px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .DP-Form-Section button:hover {
+      background-color: black;
+      color: white;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .DP-Form-Section {
+        margin: 0 20px 60px;
+        padding: 20px;
+      }
+    }
+  </style>
+
+<script>
+  window.onload = function () {
+    const params = new URLSearchParams(window.location.search);
+    const formId = params.get("form"); // e.g. Program1Form
+
+    const timetableImg = document.getElementById("TimetableImage");
+
+    if (formId) {
+      const targetForm = document.getElementById(formId);
+      if (targetForm) {
+        targetForm.classList.add("show");
+
+        // Scroll to timetable image first
+        const scrollTarget = document.querySelector(".DP-Timetable-Banner");
+        if (scrollTarget) {
+          scrollTarget.scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Set timetable image and alt text
+        switch (formId) {
+          case "Program1Form":
+            timetableImg.src = "Program1Timetable.jpg";
+            timetableImg.alt = "Programme 1 Timetable";
+            break;
+          case "Program2Form":
+            timetableImg.src = "Program2Timetable.jpg";
+            timetableImg.alt = "Programme 2 Timetable";
+            break;
+          case "Program3Form":
+            timetableImg.src = "Program3Timetable.jpg";
+            timetableImg.alt = "Programme 3 Timetable";
+            break;
+          case "Program4Form":
+            timetableImg.src = "Program4Timetable.jpg";
+            timetableImg.alt = "Programme 4 Timetable";
+            break;
+          default:
+            timetableImg.src = "DefaultTimetable.jpg";
+            timetableImg.alt = "Default Timetable";
+        }
+      }
+    }
+  };
+</script>
+
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../../../Homepage/index.html" class="logo"></a>
+    <div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../../Homepage/index.html'">HOME</button>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../../../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../../../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../../../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../../../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+          <a href="../../../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../../../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../../../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../../../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+    </nav>
+    <button class="search" onclick="openSearch()"></button>
+  </header>
+
+  <main class="Content-Space">
+    <div class="Title">
+      <h1>Daycare Programme Registration Form</h1>
+    </div>
+
+    <div class="DP-Timetable-Banner">
+      <img id="TimetableImage" src="" alt="Programme Timetable">
+    </div>
+
+    <!-- Programme 1 -->
+    <form id="Program1Form" class="DP-Form-Section" action="#" method="POST">
+      <h2>Play House (16–36 months old) Registration Form</h2>
+      <div class="DP-Form-Group">
+        <label>Parent Name</label>
+        <input type="text" name="parentName" placeholder="Enter your full name" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Child Age</label>
+        <input type="number" name="childAge" placeholder="e.g., 3" min="0" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Preferred Start Date</label>
+        <input type="date" name="startDate" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Special Needs</label>
+        <textarea name="specialNeeds" placeholder="e.g., allergies, medication"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Programme 2 -->
+    <form id="Program2Form" class="DP-Form-Section" action="#" method="POST">
+      <h2>Play School (3-4 years old) Registration Form</h2>
+      <div class="DP-Form-Group">
+        <label>Parent Name</label>
+        <input type="text" name="parentName" placeholder="Enter your full name" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Child Age</label>
+        <input type="number" name="childAge" placeholder="e.g., 4" min="0" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Session Type</label>
+        <select name="sessionType" required>
+          <option value="">Select session</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Full Day</option>
+        </select>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Extra Notes</label>
+        <textarea name="extraNotes" placeholder="Any special notes"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Programme 3 -->
+    <form id="Program3Form" class="DP-Form-Section" action="#" method="POST">
+      <h2>Play School (5 years old) Registration Form</h2>
+      <div class="DP-Form-Group">
+        <label>Guardian Name</label>
+        <input type="text" name="guardianName" placeholder="Enter your name" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Child Full Name</label>
+        <input type="text" name="childFullName" placeholder="e.g., Aisyah Binti Kamal" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Days Needed</label>
+        <input type="text" name="daysNeeded" placeholder="e.g., Mon-Wed-Fri" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Medical Concerns</label>
+        <textarea name="medicalConcerns" placeholder="e.g., asthma, peanut allergy"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Programme 4 -->
+    <form id="Program4Form" class="DP-Form-Section" action="#" method="POST">
+      <h2>Play School (6 years old) Registration Form</h2>
+      <div class="DP-Form-Group">
+        <label>Parent/Guardian</label>
+        <input type="text" name="guardianName" placeholder="Enter your full name" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Child DOB</label>
+        <input type="date" name="childDOB" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Required Hours</label>
+        <input type="text" name="requiredHours" placeholder="e.g., 8am - 5pm" required>
+      </div>
+      <div class="DP-Form-Group">
+        <label>Remarks</label>
+        <textarea name="remarks" placeholder="e.g., nap time, specific activities"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>

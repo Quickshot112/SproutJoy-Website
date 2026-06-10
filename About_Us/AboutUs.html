@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\Website_Design\Icon.jpg">
+  
+  <script src="../Website_Design/WebsitesJava.js"></script> 
+ 
+  <style>
+    
+    .About-Us-Banner {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #ccc;
+    }
+
+    .About-Us-Banner-Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+	
+    
+    .Mission-Story-Section {
+      padding: 10px 20px;
+    }
+
+    .Mission-Story-Row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+	
+    .About-Us-Mission h2 {
+      text-align: center;
+	  padding: 30px;
+    }
+	
+    .About-Us-Mission p {
+	  line-height: 1.6;
+	  padding-left: 60px;
+	  text-align: justify;
+    }
+	
+    .About-Us-Story h2 {
+      text-align: center;
+	  padding-top: 20px;
+	  line-height: 0.2;
+    }
+	
+	.About-Us-Story {
+	  text-align: center;
+	}
+	
+    .About-Us-Story-Img{
+      width: 45%;
+      background: white;
+      border: 2px solid #000;
+    }
+
+    .About-Us-Button {
+	  display: block;
+	  margin: 15px auto 0 auto;
+	  padding: 10px 20px;
+	  background-color: #FFDEAD;
+	  border: 1px solid #000;
+	  color: black;
+	  border-radius: 5px;
+	  cursor: pointer;
+    }
+	
+
+    /* TEAM SECTION */
+    .aboutus-team {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .aboutus-team-grid {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+	  margin-bottom:20px;
+    }
+
+    .aboutus-team-member {
+      width: 200px;
+      height: 200px;
+      background: #ccc;
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+	
+	.aboutus-team-member img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover; 
+	  border-radius: 50%;
+	  display: block; 
+	}
+	
+	.aboutus-team-member img:hover {
+	  transform: scale(1.15);
+	  transition: transform 0.3s ease;
+	}
+
+    .About-Us-Priority {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .Priority-Container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .Priority-Item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .Priority-Img {
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      border-radius: 50%;
+      border: 2px solid #000;
+      background-size: cover;
+      background-position: center;
+    }
+	
+	.Priority-Img img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover; 
+	  border-radius: 50%;
+	  display: block; 
+	}
+
+    .Priority-Text {
+      margin-top: 10px;
+      max-width: 300px;
+	  font-size: 20px;
+    }
+	
+	.About-Us-Services {
+	  position: relative;
+	  background: #ddd;
+	  text-align: center;
+	  padding: 0; 
+	  overflow: hidden;
+	}
+
+	.About-Us-Services img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	  object-fit: cover;
+	}
+
+	.About-Us-Services button {
+	  position: absolute;
+	  bottom: 55px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  font-weight: bold;
+	}
+	
+	
+    .About-Us-Contact-Us {
+	  background-color: lightblue;
+	  position: relative;
+	  text-align: center;
+	  padding: 0; 
+	  overflow: hidden;
+	}
+
+	.About-Us-Contact-Us img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	  object-fit: cover;
+	}
+
+	.About-Us-Contact-Us button {
+	  position: absolute;
+	  bottom: 35px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  font-weight: bold;
+	}
+
+
+
+    @media (max-width: 768px) {
+	
+	  .Content-Space {
+        margin-top: 70px;
+	  }
+	  
+      .Mission-Story-Row {
+      grid-template-columns: 1fr;
+      }
+
+      .aboutus-team-member {
+        width: 90px;
+        height: 90px;
+      }
+
+      .About-Us-Story-Box {
+        height: 150px;
+		background-color: white;
+      }
+	  
+	  .About-Us-Services button {
+	    position: absolute;
+	    bottom: 15px;
+	    font-weight: normal;
+	  }
+	  
+	  .About-Us-Contact-Us button {
+	    position: absolute;
+	    bottom: 18px;
+	    font-weight: normal;
+	  }
+	  
+    }
+
+</style>
+  
+  <link rel="stylesheet" href="..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+  
+    <a href="../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+	
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+  <main class="Content-Space">
+  
+  <!-- ABOUT US BANNER -->
+  <div class="About-Us-Banner">
+    <img class="About-Us-Banner-Img" src="Banner.jpg" alt="About Us Banner">
+  </div>
+  
+  <div class="Title">
+    <h1>ABOUT US</h1>
+  </div>
+
+  <!-- MISSION & OUR STORY SIDE BY SIDE -->
+  <div class="Mission-Story-Section">
+    <div class="Mission-Story-Row">
+      <div class="About-Us-Mission">
+        <h2>MISSION STATEMENT</h2>
+		
+        <p>At SproutJoy, our mission is to provide a safe, nurturing, and joyful environment where every child can grow with confidence, 
+		creativity, and happiness. We strive to foster each child’s unique potential through engaging activities, 
+		compassionate care, and positive reinforcement.</p>
+		
+		<p>At the same time, we are committed to supporting parents by offering clear communication, 
+		accessible and flexible services, and a team they can trust wholeheartedly. Together, we aim to build a community where families feel empowered, 
+		supported, and confident in the care their little ones receive.</p>
+      </div>
+
+      <div class="About-Us-Story">
+        <h2>OUR STORY</h2>
+		<img class="About-Us-Story-Img" src="BUILDINGSPROUTJOY.png" alt="Sprout Joy Building">
+        <button class="About-Us-Button" onclick="location.href='../About_Us/Organizations_Background/OrganizationsBackground.html'">Our Story</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM SECTION -->
+  <div class="aboutus-team">
+    <h2>MEET THE TEAM</h2>
+    <div class="aboutus-team-grid">
+      <div class="aboutus-team-member"><img src="TeamMember1.png" alt="Team Member 1"></div>
+      <div class="aboutus-team-member"><img src="TeamMember2.png" alt="Team Member 2"></div>
+      <div class="aboutus-team-member"><img src="TeamMember3.png" alt="Team Member 3"></div>
+      <div class="aboutus-team-member"><img src="TeamMember4.png" alt="Team Member 4"></div>
+      <div class="aboutus-team-member"><img src="TeamMember5.png" alt="Team Member 5"></div>
+    </div>
+    <div class="About-Us-Button-container">
+      <button class="About-Us-Button" onclick="location.href='../About_Us/Meet_Our_Team/MeetOurTeam.html'">Get to Know Us</button>
+    </div>
+  </div>
+  
+  <!-- SERVICES SECTION -->
+  <div class="About-Us-Services">
+    <img src="Services.jpg" alt="Services">
+    <button class="About-Us-Button" onclick="location.href='../Our_Services/OurServices.html'">Load More</button>
+  </div>
+
+  <!-- PRIORITY SECTION -->
+  <div class="About-Us-Priority">
+    <h2>WE PRIORITISE</h2>
+    <div class="Priority-Container">
+      <div class="Priority-Item">
+        <div class="Priority-Img"><img src="Safety.jpg" alt="Priority 1"></div>
+        <p class="Priority-Text">Your child’s safety first</p>
+      </div>
+     <div class="Priority-Item">
+        <div class="Priority-Img"><img src="Respect&Kindness.jpg" alt="Priority 2"></div>
+        <p class="Priority-Text">Respect & kindess</p>
+      </div>
+      <div class="Priority-Item">
+        <div class="Priority-Img"><img src="OpenParentCommunication.jpg" alt="Priority 3"></div>
+        <p class="Priority-Text">Open parent communication</p>
+     </div>
+      <div class="Priority-Item">
+        <div class="Priority-Img"><img src="LearningToPlay.jpg" alt="Priority 3"></div>
+        <p class="Priority-Text">Play. Learn. Grow</p>
+     </div>
+   </div>
+  </div>
+
+  <!-- CONTACT BUTTON -->
+  <div class="About-Us-Contact-Us">
+    <img src="Contact.jpg" alt="Contact Us">
+    <button class="About-Us-Button" onclick="location.href='../Contact_Us/ContactUs.html'">Contact Us Here!</button>
+  </div>
+
+
+  </main>  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+  
+</body>
+</html>
+  
+  

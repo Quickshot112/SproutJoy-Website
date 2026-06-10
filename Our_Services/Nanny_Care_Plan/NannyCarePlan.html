@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nanny Care Plan</title>
+
+  <link rel="icon" type="image/jpeg" href="../../Website_Design/Icon.jpg">
+  <link rel="stylesheet" href="../../Website_Design/WebsiteLayout.css">
+  <script src="../../Website_Design/WebsitesJava.js"></script>
+
+  <script>
+    function showForm(formId) {
+      const allForms = document.getElementsByClassName('NCP-Booking-Form');
+      for (let form of allForms) {
+        form.style.display = 'none';
+      }
+      document.getElementById(formId).style.display = 'block';
+    }
+  </script>
+
+  <style>
+    .NCP-Top-Grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 50px;
+      padding-bottom: 100px;
+    }
+
+    .NCP-Card {
+      width: 380px;
+      border: 2px solid black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .NCP-Img {
+      width: 100%;
+      height: 180px;
+      background: #eee;
+      border: 2px solid black;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .NCP-Img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .NCP-Card p {
+      margin: 6px 0;
+      border-bottom: 1px dotted #000;
+    }
+
+    .NCP-Card button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #FFDEAD;
+      border: 2px solid black;
+      cursor: pointer;
+    }
+
+    .NCP-Card button:hover {
+      background-color: gray;
+    }
+
+    .NCP-Booking-Form {
+      display: none;
+      max-width: 800px;
+      margin: 40px auto;
+      border: 2px solid black;
+      padding: 30px;
+      background: #f9f9f9;
+    }
+
+    .NCP-Booking-Form h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .NCP-Form-Group {
+      margin-bottom: 20px;
+    }
+
+    .NCP-Form-Group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .NCP-Form-Group input,
+    .NCP-Form-Group select,
+    .NCP-Form-Group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px dotted #000;
+    }
+
+    .NCP-Form-Group textarea {
+      height: 80px;
+    }
+
+    .NCP-Booking-Form button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 24px;
+      font-size: 16px;
+      border: 2px solid black;
+      border-radius: 30px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .NCP-Booking-Form button:hover {
+      background-color: black;
+      color: white;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .NCP-Top-Grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .NCP-Booking-Form {
+        margin: 0 20px 60px;
+        padding: 20px;
+      }
+
+      .Content-Space {
+        padding-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../../Homepage/index.html" class="logo"></a>
+    <div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Homepage/index.html'">HOME</button>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+          <a href="../../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+    </nav>
+    <button class="search" onclick="openSearch()"></button>
+  </header>
+
+  <main class="Content-Space">
+    <div class="Title">
+      <h1>Nanny Care Plan Options</h1>
+    </div>
+
+	<div class="NCP-Top-Grid">
+	  <!-- Infant Plan -->
+	  <div class="NCP-Card">
+		<div class="NCP-Img"><img src="Plan1.jpg" alt="Service 1"></div>
+		<p><strong>Infant Plan</strong></p>
+		<p>For ages 0–2</p>
+		<p>Specialized care for newborns with a focus on individualized routines, feeding support, nap supervision, and early sensory engagement.</p>
+		<p><strong>Operation Time:</strong> Monday–Saturday, 7:30 AM – 6:00 PM</p>
+		<p><strong>Booking Requirement:</strong> Minimum 2 days advance booking</p>
+		<p><strong>Price:</strong> RM1,200/month</p>
+		<button onclick="showForm('Form1')">Book Now</button>
+	  </div>
+
+	  <!-- Toddler Plan -->
+	  <div class="NCP-Card">
+		<div class="NCP-Img"><img src="Plan2.jpg" alt="Service 2"></div>
+		<p><strong>Toddler Plan</strong></p>
+		<p>For ages 2–4</p>
+		<p>Interactive play and learning sessions to support social skills, potty training assistance, and creative indoor/outdoor activities tailored for active toddlers.</p>
+		<p><strong>Operation Time:</strong> Monday–Saturday, 8:00 AM – 6:30 PM</p>
+		<p><strong>Booking Requirement:</strong> Book 3 days in advance for full-day service</p>
+		<p><strong>Price:</strong> RM1,100/month</p>
+		<button onclick="showForm('Form2')">Book Now</button>
+	  </div>
+
+	  <!-- Full-Day Plan -->
+	  <div class="NCP-Card">
+		<div class="NCP-Img"><img src="Plan3.jpg" alt="Service 3"></div>
+		<p><strong>Full-Day Plan</strong></p>
+		<p>For ages 4+</p>
+		<p>All-day nanny service including meal prep, homework supervision, outdoor playtime, and enrichment activities customized for your child’s needs.</p>
+		<p><strong>Operation Time:</strong> Monday–Sunday, 7:30 AM – 7:00 PM</p>
+		<p><strong>Booking Requirement:</strong> Booking required at least 1 week prior for weekly slots</p>
+		<p><strong>Price:</strong> RM1,300/month or RM50/hour for on-demand service</p>
+		<button onclick="showForm('Form3')">Book Now</button>
+	  </div>
+	</div>
+
+
+    <!-- Form 1: Infant Plan -->
+    <form id="Form1" class="NCP-Booking-Form" method="POST" action="#">
+      <h2>Infant Plan Booking</h2>
+      <div class="NCP-Form-Group">
+        <label>Parent Name</label>
+        <input type="text" name="parentName" placeholder="Enter your name" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Infant Age</label>
+        <input type="number" name="infantAge" placeholder="e.g., 6 months" min="0" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Date</label>
+        <input type="date" name="bookingDate" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Special Notes</label>
+        <textarea name="specialNotes" placeholder="e.g., feeding schedule, allergies"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Form 2: Toddler Plan -->
+    <form id="Form2" class="NCP-Booking-Form" method="POST" action="#">
+      <h2>Toddler Plan Booking</h2>
+      <div class="NCP-Form-Group">
+        <label>Parent Name</label>
+        <input type="text" name="parentName" placeholder="Enter your name" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Toddler Age</label>
+        <input type="number" name="toddlerAge" placeholder="e.g., 3" min="0" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Date</label>
+        <input type="date" name="bookingDate" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Preferred Activities</label>
+        <input type="text" name="activities" placeholder="e.g., arts & crafts, puzzles" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Additional Notes</label>
+        <textarea name="notes" placeholder="e.g., toilet training, food preferences"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Form 3: Full-Day Plan -->
+    <form id="Form3" class="NCP-Booking-Form" method="POST" action="#">
+      <h2>Full-Day Plan Booking</h2>
+      <div class="NCP-Form-Group">
+        <label>Parent Name</label>
+        <input type="text" name="parentName" placeholder="Enter your name" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Child Age</label>
+        <input type="number" name="childAge" placeholder="e.g., 5" min="0" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Start Date</label>
+        <input type="date" name="startDate" required>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Duration</label>
+        <select name="duration" required>
+          <option value="">Select duration</option>
+          <option>Half-Day</option>
+          <option>Full-Day</option>
+        </select>
+      </div>
+      <div class="NCP-Form-Group">
+        <label>Notes</label>
+        <textarea name="notes" placeholder="e.g., nap time, transportation needs"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Organizations Background</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\..\Website_Design\Icon.jpg">
+  
+  <script src="../../Website_Design/WebsitesJava.js"></script>
+  
+  <style>
+
+    /* BANNER */
+    .OB-Banner {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #ccc;
+    }
+
+    .OB-Banner-Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+	
+    /* FOUNDING + PURPOSE SECTION */
+    .OB-Section {
+      padding: 60px 20px;
+    }
+
+    .OB-Text-Container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .OB-Founding-Text {
+	  margin-left: 80px;
+      flex: 1;
+      min-width: 200px;
+      padding: 0 20px;
+    }	
+	
+    .OB-Purpose-Text {
+	  margin-right: 20px;
+      flex: 1;
+      min-width: 200px;
+      padding: 0 20px;
+    }
+
+    .OB-Img-Box {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #000;
+      background: #ccc;
+      flex-shrink: 0;
+      display: flex;
+	  margin-left: 100px;
+	  margin-right: 100px;
+    }
+
+    .OB-Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .OB-Section h2 {
+      margin-bottom: 30px;
+    }
+
+    .OB-Founding-h2 {
+      margin-left: 20px;
+    }
+	
+    .OB-Purpose-h2 {
+      text-align: right;
+      margin-right: 300px;
+      margin-bottom: 20px;
+    }
+	
+    .reverse {
+      flex-direction: row-reverse;
+    }
+	
+	/* HEARTFULL CLOSING */
+	.OB-Heartfull-Closing-Img {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      background: #ccc;
+    }
+
+    .OB-Heartfull-Closing-Img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .OB-Closing-Text {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+	
+    /* PERSPECTIVE */
+	@media (max-width: 768px) {
+	  .Content-Space {
+		margin-top: 70px;
+	  }
+	  
+	  .OB-Text-Container {
+		flex-direction: column; /* Stack text and image */
+		align-items: center;
+		text-align: center;
+	  }
+
+	  .OB-Img-Box {
+		width: 60%; /* Make images smaller to fit screen */
+		height: auto; /* Let height adjust naturally */
+		margin: 20px 0;
+	  }
+
+	  .OB-Img {
+		width: 100%;
+		height: auto;
+	  }
+
+	  .OB-Purpose-h2 {
+		text-align: center;
+		margin: 0 0 20px 0;
+	  }
+	  
+	  .OB-Founding-Text,
+	  .OB-Purpose-Text {
+		margin: 0;
+		padding: 0 10px;
+	  }
+	}
+
+	
+    .OB-Purpose-Text p, 
+	.OB-Founding-Text p,
+    .OB-Closing-Text p{
+	  font-size: 18px;
+	  line-height: 1.8;
+      margin: 4px 0;
+	  text-align: justify;
+    }
+    
+
+	
+  </style>
+  
+  <link rel="stylesheet" href="..\..\Website_Design\WebsiteLayout.css">
+  
+</head>
+<body>
+  <header id="mainHeader">
+    <a href="../../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+  
+  <main class="Content-Space">
+
+  <div class="Title">
+    <h1>ORGANIZATION'S BACKGROUND</h1>
+  </div>
+  
+  <!--BANNER -->
+  <div class="OB-Banner">
+    <img class="OB-Banner-Img" src="Banner.jpg" alt="=Organizations Background Banner">
+  </div>
+  
+  <!-- Founding Story -->
+  <div class="OB-Section">
+    <h2 class="OB-Founding-h2">Founding Story</h2>
+    <div class="OB-Text-Container">
+      <div class="OB-Founding-Text">
+        <p>SproutJoy was founded in 2021 by Mr. Nuaim, 
+		who noticed how many working parents in his community struggled to find a daycare they could truly trust and a place that felt like a second home for their little ones. 
+		As someone passionate about early childhood education, Mr. Nuaim envisioned a daycare that would be more than just a place to leave children during work hours. 
+		He wanted to create a nurturing environment where every child felt safe, loved, and free to discover their strengths and creativity. 
+		Starting with just a small group of children in a cozy classroom, SproutJoy quickly became known for its warm atmosphere and dedicated team. 
+		Today, SproutJoy continues to grow as a trusted daycare Centre that stays true to its original mission: providing “Safe Hands, Happy Hearts” for every child and peace of mind for every parent.</p>
+      </div>
+      <div class="OB-Img-Box">
+        <img class="OB-Img" src="Founder.png" alt="Founder Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Purpose -->
+  <div class="OB-Section">
+    <h2 class="OB-Purpose-h2">Purpose</h2>
+    <div class="OB-Text-Container reverse">
+      <div class="OB-Purpose-Text">
+        <p>At SproutJoy, our purpose is <b>to create a safe and joyful environment where every child feels loved, valued, and confident to explore the world around them.</b> 
+		We believe that early childhood is a precious time for growth and discovery, and we are here to nurture each child’s unique potential through playful learning, care, and guidance. 
+		We aim to support parents by providing trustworthy, high-quality childcare that gives them peace of mind, knowing their little ones are in good hands each day.</p>
+      </div>
+      <div class="OB-Img-Box">
+        <img class="OB-Img" src="Purpose.jpg" alt="Purpose Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Heartfelt Closing -->
+  <div class="OB-Section">
+    <img class="OB-Heartfull-Closing-Img" src="HC.jpg" alt="Heartfelt Closing Image">
+    <h2 style="text-align:center;">Heartfelt Closing</h2>
+    <div class="OB-Closing-Text">
+      <p>Thank you for taking the time to get to know SproutJoy. We truly believe that every child deserves a place where they feel safe, loved, and happy each day. 
+	  It is our greatest joy to watch your little ones grow, learn, and discover their strengths in an environment that feels like a second home. 
+	  We look forward to welcoming you and your child into our SproutJoy family, where safe hands and happy hearts are at the heart of everything we do.</p>
+    </div>
+  </div>
+  
+  </main>
+  
+    <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+</body>
+</html>
+  
+  

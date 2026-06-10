@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Homepage</title>
+  
+  <link rel="icon" type="image/jpeg" href="..\Website_Design\Icon.jpg">
+
+  <script src="../Website_Design/WebsitesJava.js"></script>  
+  
+  <script>
+    let SlidePage = 1;
+    let slideTimer;
+
+    function plusSlides(n) {
+      clearInterval(slideTimer);
+      showSlides(SlidePage += n);
+      startAutoSlide();
+    }
+
+    function currentSlide(n) {
+      clearInterval(slideTimer);
+      showSlides(SlidePage = n);
+      startAutoSlide();
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("S-img");
+      let dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) { SlidePage = 1; }
+      if (n < 1) { SlidePage = slides.length; }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active1", "");
+      }
+
+      slides[SlidePage - 1].style.display = "block";
+      if (dots.length > 0) {
+        dots[SlidePage - 1].className += " active1";
+      }
+    }
+
+    function startAutoSlide() {
+      slideTimer = setInterval(() => {
+        SlidePage++;
+        showSlides(SlidePage);
+      }, 4000);
+    }
+
+    window.onload = function () {
+      showSlides(SlidePage);
+      startAutoSlide();
+    };
+  </script>
+  
+  <style>
+
+	.S-img-container {
+	  width: 100%;
+	  background: #ddd;
+	  position: relative;
+	  overflow: hidden;
+	}
+
+	.S-img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	  object-fit: contain; /* optional: ensures image fits without cropping */
+	  position: static;    /* let it flow naturally */
+	}
+
+    .S-img.fade {
+      animation: fade 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 2px;
+      background-color: gray;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active1, .dot:hover {
+      background-color: black;
+    }
+
+    .section {
+      padding: 90px 20px;
+    }
+
+    .activities-locations {
+      display: grid;
+      grid-template-columns: 1fr 10px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .activities, .locations {
+      min-width: 280px;
+    }
+
+    .activities h2, .locations h2 {
+      text-align: center;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .activities-grid div {
+      width: 160px;
+      height: 160px;
+      background: #ccc;
+      border: 2px solid #000;
+	  overflow: hidden; 
+	  position: relative;
+    }
+	
+	.activities-grid div img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  display: block;    
+	  position: static; 
+	  
+	}
+	
+	.activities button {
+	  display: block;
+	  margin: 15px auto 0 auto;
+	  padding: 10px 20px;
+	  background-color: #FFDEAD;
+	  border: 1px solid #000;
+	  color: black;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+
+	.activities button:hover {
+	  background-color: gray;
+	}
+
+    .middle-divider {
+      width: 100%;
+      height: 100%;
+      border-left: 2px solid black;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 20px;
+      column-gap: 10px;
+      justify-items: center;
+    }
+
+    .locations-grid div {
+      width: 200px;
+      height: 110px;
+      background: #F0F8FF;
+      border: 2px solid #000;
+	  display: flex;
+	  flex-direction: column;	
+	  justify-content: center; 
+	  text-align: center;  
+	  padding-top: 20px;
+    }
+
+    .services-section {
+      padding: 70px;;
+    }
+
+    .services-section h2 {
+      text-align: center;
+    }
+	
+	.services-section button {
+	  display: block;
+	  margin: 15px auto 0 auto;
+	  padding: 10px 20px;
+	  background-color: #FFDEAD;
+	  border: 1px solid #000;
+	  color: black;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+
+	.services-section button:hover {
+	  background-color: gray;
+	}
+
+    .services {
+      display: flex;
+      gap: 80px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .services div {
+      width: 250px;
+      height: 250px;
+      background: #ccc;
+      border: 2px solid #000;
+	  overflow: hidden; 
+	  position: relative;
+    }
+	
+	.services div img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  display: block;    
+	  position: static; 
+	  
+	}
+
+    .hiring-section {
+      background: #ddd;
+      text-align: center;
+	  overflow: hidden; 
+	  position: relative;
+	  width: 100%;
+      border-top: 1px solid black; 
+    }
+	
+	.hiring-wrapper {
+	  position: relative;
+	  display: inline-block;
+	  width: 100%;
+	  max-width: 100%; 
+	}
+
+	.hiring-wrapper img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	}
+
+	.hiring-wrapper button {
+	  position: absolute;
+	  bottom: 18%; 
+	  left: 50%;
+	  font-size: 20px;
+	  font-weight: bold;
+	  transform: translateX(-50%);
+	  background-color: #FFDEAD;
+	  border: 1px solid #000;
+	  border-radius: 5px;
+	  padding: 8px 16px;
+	  cursor: pointer;
+	}
+
+	.hiring-wrapper button:hover {
+	  background-color: gray;
+	}
+
+
+    @media (max-width: 768px) {
+	
+	  .S-img-container {
+		height: 180px;
+	  }
+
+	  .S-img {
+		width: 100%;
+		height: auto; 
+		object-fit: cover; 
+	  }
+	
+      .activities-grid div {
+	    width: 90px;
+        height: 90px;
+	  }
+	  
+	  .locations-grid div {
+		width: 120px;        
+		height: 70px;        
+		padding: 2px;        
+	  }
+  
+      .services div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .activities-grid {
+        grid-template-columns: repeat(3, 1fr);
+	    gap: 15px;
+      }
+
+      .locations-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .middle-divider {
+        display: block;
+      }
+
+      .activities-locations {
+        grid-template-columns: 1fr 10px 1fr;
+        gap: 20px;
+      }
+	  
+	  .locations-grid b {
+		font-size: 10px;     
+		line-height: 1.1;   
+		margin: 0px;
+	  }
+
+	  .locations-grid p {
+		font-size: 10px;     
+		line-height: 1;   
+		margin: 0px;
+	  }
+	  
+	.hiring-wrapper button {
+	  font-size: 12px;
+	}
+	  
+    }
+
+
+  </style>
+  
+  <link rel="stylesheet" href="..\Website_Design\WebsiteLayout.css">
+</head>
+<body>
+  <header id="mainHeader">
+  
+    <a href="../Homepage/index.html" class="logo"></a>
+	<div class="menu-icon" onclick="toggleMenu()"></div>
+	
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Homepage/index.html'">HOME</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../About_Us/AboutUs.html'">ABOUT US</button>
+        <div class="dropdown-content">
+          <a href="../About_Us/Meet_Our_Team/MeetOurTeam.html">Meet Our Team</a>
+          <a href="../About_Us/Organizations_Background/OrganizationsBackground.html">Organizations Background</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Our_Services/OurServices.html'">OUR SERVICES</button>
+        <div class="dropdown-content">
+          <a href="../Our_Services/Daycare_Programme/DaycareProgramme.html">Daycare Programme</a>
+          <a href="../Our_Services/Nanny_Care_Plan/NannyCarePlan.html">Nanny Care Plan</a>
+		  <a href="../Our_Services/Pop-Up_Nanny/Pop-UpNanny.html">Pop-Up Nanny</a>
+		  <a href="../Our_Services/Our_Services_Summary/OurServices.xml" target="_blank">Our Services Summary</a>
+
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Why_Choose_Us/WhyChooseUs.html'">WHY CHOOSE US</button>
+        <div class="dropdown-content">
+          <a href="../Why_Choose_Us/ParentsReviews/ParentsReviews.html">Parents Reviews</a>
+        </div>        
+	  </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick="location.href='../Contact_Us/ContactUs.html'">CONTACT US</button>
+        <div class="dropdown-content">
+          <a href="../Contact_Us/Job_Application/JobApplication.html">Job Application</a>
+        </div>
+      </div>
+	  
+    </nav>
+	
+	<button class="search" onclick="openSearch()"></button>
+  </header>
+  
+  <main class="Content-Space">
+  
+  <!-- S-img-container -->
+  <div class="S-img-container">
+    <a><img class="S-img fade" src="Slide1.gif" alt="Slide 1"></a>
+    <a><img class="S-img fade" src="slide2.gif" alt="Slide 2"></a>
+    <a><img class="S-img fade" src="slide3.gif" alt="Slide 3"></a>
+    <a><img class="S-img fade" src="slide4.gif" alt="Slide 4"></a>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+  </div>
+
+  <!-- ACTIVITIES + LOCATIONS WITH DIVIDER -->
+  <div class="section">
+    <div class="activities-locations">
+      <div class="activities">
+        <h2>ACTIVITIES PROVIDED</h2>
+        <div class="activities-grid">
+          <div><img src="AP1.jpg" alt="Math Games Activity"></div>  <div><img src="AP2.jpg" alt="Science Activity"></div>  <div><img src="AP3.jpg" alt="Interactive Activity"></div>
+          <div><img src="AP4.jpg" alt="Playdough Activity"></div>  <div><img src="AP5.jpg" alt="Arts and Creative Activity"></div> <div><img src="AP6.jpg" alt="Music Playing Activity"></div>
+        </div>
+		<button onclick="location.href='../Why_Choose_Us/WhyChooseUs.html#Activities-Provided'">See More</button>
+      </div>
+
+      <div class="middle-divider"></div>
+
+      <div class="locations">
+        <h2>AVAILABLE LOCATION</h2>
+        <div class="locations-grid">
+			<div>
+			  <b>TAMAN SRI ANDALAS</b><br>
+			  <p>📍 Klang, Selangor</p>
+			</div>
+			<div>
+			  <b>TAMAN SAUJANA UTAMA</b><br>
+			  <p>📍 Sungai Buloh, Selangor</p>
+			</div>
+			<div>
+			  <b>TAMAN BUKIT SEMENYIH</b><br>
+			  <p>📍 Semenyih, Selangor</p>
+			</div>
+			<div>
+			  <b>TAMAN SRI MUDA</b><br>
+			  <p>📍 Shah Alam, Selangor</p>
+			</div>
+			<div>
+			  <b>TAMAN SENTOSA</b><br>
+			  <p>📍 Rawang, Selangor</p>
+			</div>
+			<div>
+			  <b>TAMAN SRI RAMPAL</b><br>
+			  <p>📍 Cheras, Selangor</p>
+			</div>
+        </div>
+      </div>
+	  
+    </div>
+  </div>
+
+  <!-- OUR SERVICES -->
+  <div class="services-section">
+    <h2>OUR SERVICES</h2>
+    <div class="services">
+      <div><img src="OS1.jpg" alt="Daycare Programme"></div>
+      <div><img src="OS2.jpg" alt="Nanny Care Plan"></div>
+      <div><img src="OS3.jpg" alt="Pop-Up Nanny"></div>
+    </div>
+	<button onclick="location.href='../Our_Services/OurServices.html'">See More</button>
+  </div>
+
+  <!-- HIRING -->
+  <div class="hiring-section">
+    <div class="hiring-wrapper">
+      <img src="Hiring-Ad.jpg" alt="Daycare Programme">
+      <button onclick="location.href='../Contact_Us/Job_Application/JobApplication.html'">See More</button>
+    </div>
+  </div>
+  
+    </main>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 SproutJoy. All Rights Reserved.
+  </footer>
+  
+
+  
+  
+</body>
+</html>
